@@ -7,8 +7,8 @@ To observe:
 - yarn install
 - visit the server
 - open console
-- observe '5' logged twice
-- mouseover 'Update value' see that '5' is logged again (and every time it is moused over, but mousing over changes only values NOT passed to the helper)
+- observe helper logging
+- Click 'change "other"' -- see the helper log again even though none of it's inputs have changed
 
 To explore the code:
 
