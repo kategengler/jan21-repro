@@ -1,58 +1,16 @@
-# jan21-repro
+# Reproduction of something unexpected
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+I'm seeing a helper run again when none of the arguments have changed.
 
-## Prerequisites
+To observe: 
 
-You will need the following things properly installed on your computer.
+- yarn install
+- visit the server
+- open console
+- observe '5' logged twice
+- mouseover 'Update value' see that '5' is logged again (and every time it is moused over, but mousing over changes only values NOT passed to the helper)
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/)
-* [Yarn](https://yarnpkg.com/)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+To explore the code:
 
-## Installation
-
-* `git clone <repository-url>` this repository
-* `cd jan21-repro`
-* `yarn install`
-
-## Running / Development
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `yarn lint:hbs`
-* `yarn lint:js`
-* `yarn lint:js --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+- Start in application.hbs
+- The key to causing this seems to be yielding a hash that includes a value that is changing, even if the hash is stable

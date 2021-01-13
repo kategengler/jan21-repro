@@ -5146,6 +5146,13 @@ ember-source@~3.24.0:
     semver "^6.1.1"
     silent-error "^1.1.1"
 
+ember-stable-hash@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ember-stable-hash/-/ember-stable-hash-2.0.0.tgz#55e6540957a90671c776d64e299c67fcd8b26d2f"
+  integrity sha512-xPS8tDWK2nTJ4hBfAsjheoTFsnQoRW34mWZhuIMBU1CP/SMX0z1TNSREeFhlIrR+cOtB37lLzW/4smBWNsAhuQ==
+  dependencies:
+    ember-cli-babel "^7.19.0"
+
 ember-template-lint@^2.15.0:
   version "2.16.0"
   resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-2.16.0.tgz#a6d725e2c19ab7df43390357e085c66a00a751bb"

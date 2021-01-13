@@ -1,7 +1,22 @@
 {{page-title "Jan21Repro"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
 {{outlet}}
+
+<section {{on "mouseenter" this.changeOther}}>
+  <button type="button" {{on "click" this.changeValue}}>Update value</button>
+  <Parent @otherProperty={{this.otherProperty}} as |context|>
+    <Child @context={{context}} @value={{this.value}} />
+  </Parent>
+</section>
+
+{{!-- alternative --}}
+
+{{!--
+<section>
+  <button type="button" {{on "click" this.changeValue}} {{on "click" this.changeOther}}>Update value</button>
+  <Parent @otherProperty={{this.otherProperty}} as |context|>
+    <Child @context={{context}} @value={{this.value}} />
+  </Parent>
+</section>
+
+--}}
