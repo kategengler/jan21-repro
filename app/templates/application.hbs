@@ -2,21 +2,10 @@
 
 {{outlet}}
 
-<section {{on "mouseenter" this.changeOther}}>
-  <button type="button" {{on "click" this.changeValue}}>Update value</button>
-  <Parent @otherProperty={{this.otherProperty}} as |context|>
-    <Child @context={{context}} @value={{this.value}} />
-  </Parent>
-</section>
-
-{{!-- alternative --}}
-
-{{!--
 <section>
-  <button type="button" {{on "click" this.changeValue}} {{on "click" this.changeOther}}>Update value</button>
+  <p>Open the console, click the button below and see the helper log even though none of the values passed to it have changed</p>
+  <button {{on "click" this.changeOther}}>Change "other"</button>
   <Parent @otherProperty={{this.otherProperty}} as |context|>
-    <Child @context={{context}} @value={{this.value}} />
+    <Child @context={{context}} />
   </Parent>
 </section>
-
---}}

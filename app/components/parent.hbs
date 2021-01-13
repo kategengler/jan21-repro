@@ -1,1 +1,2 @@
-{{yield (stable-hash thing=@otherProperty words=this.foo)}}
+{{!-- change this and remove thing=@otherProperty and the helper will only run the once --}}
+{{yield (stable-hash thing=@otherProperty words=5)}}
